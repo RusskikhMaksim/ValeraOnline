@@ -5,7 +5,7 @@ Rails.application.routes.draw do
  get "/input-start" => "menu_actions#start"
  get "/input-load" => "menu_actions#load"
  resources :saves
- get "/load-game/:id" => "menu_actions#load_params", as: 'load_save'
+ #get "/load-game/:id" => "menu_actions#load_params", as: 'load_save'
  get "valera-online" => "game#index"
  #post "/save" => "game#save"
 end

@@ -9,7 +9,7 @@
         <%= save.name %>
       </td>
       <td align="center" colspan="3" nowrap>
-        <%= link_to "Load game", load_save_path(save.id)%>
+        <%= link_to "Load game", safe_path(save.id)%>
       </td>
     </tr>
     <% end %>

@@ -14,4 +14,14 @@ class SavesController < ApplicationController
         
         redirect_to "/valera-online"
     end
+
+    def show
+        #@save = Save.find_by(id: params[:id])
+        
+        #@save = Save.find(params[:id])
+        #session[:current_save_id] = @save.id
+        
+        session[:current_save_id] = params[:id]
+        redirect_to "/valera-online"
+    end
 end

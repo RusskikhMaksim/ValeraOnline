@@ -21,14 +21,4 @@ class MenuActionsController < ApplicationController
         
     #     redirect_to "/valera-online"
     # end
-
-    def load_params
-        #@save = Save.find_by(id: params[:id])
-        
-        #@save = Save.find(params[:id])
-        #session[:current_save_id] = @save.id
-        
-        session[:current_save_id] = params[:id]
-        redirect_to "game#index" and return
-    end
 end
