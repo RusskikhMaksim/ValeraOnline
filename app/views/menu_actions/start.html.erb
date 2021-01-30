@@ -1,0 +1,8 @@
+<h1>start</h1>
+
+<%= form_with url: "/saves", method: :post do |form| %>
+  <%= hidden_field_tag 'authenticity_token', form_authenticity_token %>
+  <%= form.label :query, "Введите имя персонажа:" %>
+  <%= form.text_field :name %>
+  <%= form.submit "А как эту кнопку назвать, поцаны? Я просто хз чёт потерялся" %>
+<% end %>

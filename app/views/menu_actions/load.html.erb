@@ -1,0 +1,18 @@
+<h1>load</h1>
+
+
+  <table>
+  <tbody>
+    <% @saves_list.each do |save| %>
+    <tr>
+      <td align="center" colspan="3">
+        <%= save.name %>
+      </td>
+      <td align="center" colspan="3" nowrap>
+        <%= link_to "Load game", load_save_path(save.id)%>
+      </td>
+    </tr>
+    <% end %>
+  </tbody>
+  </table>
+
