@@ -1,0 +1,33 @@
+body {background-color: rgb(175, 175, 175);
+    margin: 0 auto;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+font-size: larger;
+}
+
+ul {list-style-type: none;}
+
+a {color: black;
+    font-family: 'Courier New', Courier, monospace;}
+a:visited {color: black;}
+a:hover{color: rgb(0, 78, 151);}
+
+#board  {
+        width: 400px;
+        height: 600px;
+        margin: 0 auto;
+        margin-top: 10%;
+    }
+
+input   {
+        width: 100%;
+        
+    }
+
+#user_remember_me {
+    width: auto;
+}
+
+#login  {
+    width: 60%;
+}
+

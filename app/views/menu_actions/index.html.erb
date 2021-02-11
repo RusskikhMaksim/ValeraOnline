@@ -1,21 +1,21 @@
 <ul class="">
     <% if user_signed_in? %>
-        <%= link_to "start game", "/input-start" %>
-        <%= link_to "load game", "/input-load" %>
-        
         <p class="notice"> <%= notice %></p>
         <p class="alert"> <%= alert %></p>
+
+        <%= link_to "start game", "/input-start" %>
+        <%= link_to "load game", "/input-load" %>
     
         <li>
-            <%= link_to "Выход", destroy_user_session_path, method: :delete, class: "nav-link" %>
+            <%= link_to "Log out", destroy_user_session_path, method: :delete, class: "nav-link" %>
             
         </li>
     <% else %>
     <li>
-        <%= link_to "Вход", new_user_session_path, class: "nav-link" %>
+        <%= link_to "Sign in", new_user_session_path, class: "nav-link" %>
     </li>
     <li>
-        <%= link_to "Регистрация", new_user_registration_path, class: "nav-link" %>
+        <%= link_to "Sign up", new_user_registration_path, class: "nav-link" %>
     </li>
     <% end %>
 </ul>
