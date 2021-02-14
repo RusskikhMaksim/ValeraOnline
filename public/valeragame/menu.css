@@ -1,4 +1,4 @@
-body {background-color: rgb(175, 175, 175);
+body {background-color: rgb(215, 215, 215);
     margin: 0 auto;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 font-size: larger;
@@ -7,7 +7,10 @@ font-size: larger;
 ul {list-style-type: none;}
 
 a {color: black;
-    font-family: 'Courier New', Courier, monospace;}
+    font-family: 'Courier New', Courier, monospace;
+    text-decoration:none;
+    background-color:darkgray;
+}
 a:visited {color: black;}
 a:hover{color: rgb(0, 78, 151);}
 
@@ -20,14 +23,18 @@ a:hover{color: rgb(0, 78, 151);}
 
 input   {
         width: 100%;
-        
+        margin-top: 5px;
     }
 
 #user_remember_me {
     width: auto;
 }
 
-#login  {
+.actions  {
     width: 60%;
 }
 
+td {border-bottom: 2px solid darkgray;
+width:150px;}
+
+h1 {margin-left: 50px;}
