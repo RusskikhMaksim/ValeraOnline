@@ -7,5 +7,6 @@ Rails.application.routes.draw do
  resources :saves
  #get "/load-game/:id" => "menu_actions#load_params", as: 'load_save'
  get "valera-online" => "game#index"
+ patch "save-stats" => "game#save"
  #post "/save" => "game#save"
 end

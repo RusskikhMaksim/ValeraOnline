@@ -459,7 +459,23 @@ let TiWiner = 0;
         CheekStat();
         UpdateStat();
         Doomguy();
+        SaveData();
         //console.log(stat);
+    }
+
+    function SaveData(){
+        var xhr = new XMLHttpRequest();
+        
+        var body = JSON.stringify(stat); 
+        
+        xhr.open("PATCH", '/save-stats', true);
+        token = $('meta[name=csrf-token]').attr('content');
+        xhr.setRequestHeader('X-CSRF-Token', token);
+        xhr.setRequestHeader('Content-Type', 'application/json');
+        
+        //xhr.onreadystatechange = ...;
+        
+        xhr.send(body);
     }
 
 }

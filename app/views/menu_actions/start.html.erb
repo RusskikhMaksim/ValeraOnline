@@ -1,4 +1,5 @@
 <link href="/valeragame/menu.css" rel="stylesheet" type="text/css" />
+<div id="board">
 <h1>Start</h1>
 
 <%= form_with url: "/saves", method: :post do |form| %>
@@ -8,3 +9,4 @@
   <%= form.submit "Подтвердить", class: "actions" %>
 <% end %>
 <%= link_to "Back", root_path %>
+</div>
