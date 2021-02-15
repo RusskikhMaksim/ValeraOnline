@@ -1,10 +1,11 @@
+<link href="/valeragame/menu.css" rel="stylesheet" type="text/css" />
 <ul class="">
     <% if user_signed_in? %>
         <p class="notice"> <%= notice %></p>
         <p class="alert"> <%= alert %></p>
 
-        <%= link_to "start game", "/input-start" %>
-        <%= link_to "load game", "/input-load" %>
+        <%= link_to "Start game", "/input-start" %>
+        <%= link_to "Load game", "/input-load" %>
     
         <li>
             <%= link_to "Log out", destroy_user_session_path, method: :delete, class: "nav-link" %>
