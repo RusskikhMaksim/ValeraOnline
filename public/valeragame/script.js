@@ -264,6 +264,8 @@ function main(){
     console.log("DAROVA");
     var doomguy = document.getElementById('doomguy');
     var body = document.getElementById('body');
+    var head = document.getElementById('head');
+    head.innerHTML = `<link href="valeragame/style.css" rel="stylesheet" type="text/css" />`;
     
     var menu = document.getElementById('menu');
     var save = document.getElementById('save');
@@ -429,7 +431,7 @@ let TiWiner = 0;
             stat.fun = 10;
         }
         if (stat.hp <= 0){
-            body.innerHTML = '<a href="/"><div class="button reload">Начать заново</div></a>';
+            body.innerHTML = '<a href="/"><div class="button reload">Выйти в главное меню</div></a>';
             body.style.backgroundImage = "url(valeragame/img/DIED.jpg)";
             //body.style.backgroundPosition = "center center";
             body.style.backgroundSize = "100%";

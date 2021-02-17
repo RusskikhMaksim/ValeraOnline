@@ -22,7 +22,7 @@ class SavesController < ApplicationController
         #session[:current_save_id] = @save.id
         
         session[:current_save_id] = params[:id]
-        redirect_to "/valera-online"
+        render "/valera-online"
     end
 
     def update
