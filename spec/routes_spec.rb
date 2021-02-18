@@ -1,9 +1,8 @@
-  
 require 'rails_helper'
 
-RSpec.describe "Routes test", type: :routing do
+RSpec.describe 'Routes test', type: :routing do
   describe 'routing' do
-    it 'routes to #index' do
+    it 'routes to menu_actions#index' do
       expect(get: '/').to route_to('menu_actions#index')
     end
 

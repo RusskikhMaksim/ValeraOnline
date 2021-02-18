@@ -580,12 +580,6 @@
           null
         ]
       },
-      "/home/sharp221/ValeraOnline/test/factories/all.rb": {
-        "lines": [
-          1,
-          null
-        ]
-      },
       "/home/sharp221/ValeraOnline/config/routes.rb": {
         "lines": [
           1,
@@ -608,7 +602,6 @@
           null,
           null,
           1,
-          null,
           null,
           null
         ]
@@ -655,6 +648,7 @@
           1,
           1,
           null,
+          null,
           1,
           1,
           1,
@@ -671,10 +665,12 @@
           1,
           1,
           1,
+          2,
+          null,
           1,
           1,
           null,
-          1,
+          null,
           1,
           1,
           1,
@@ -690,19 +686,21 @@
         "lines": [
           1,
           null,
+          1,
+          1,
+          null,
+          1,
+          1,
+          1,
+          1,
+          null,
+          null,
           null,
           1,
           1,
           1,
           1,
-          1,
-          1,
           null,
-          null,
-          1,
-          1,
-          1,
-          1,
           null,
           null,
           1,
@@ -712,6 +710,7 @@
           3,
           3,
           null,
+          null,
           1,
           1,
           1,
@@ -727,8 +726,6 @@
           1,
           1,
           1,
-          null,
-          null,
           null,
           null,
           null
@@ -737,10 +734,7 @@
       "/home/sharp221/ValeraOnline/app/controllers/menu_actions_controller.rb": {
         "lines": [
           1,
-          null,
-          null,
           1,
-          null,
           null,
           1,
           1,
@@ -820,7 +814,6 @@
           null,
           null,
           1,
-          null,
           null
         ]
       },
@@ -831,6 +824,6 @@
         ]
       }
     },
-    "timestamp": 1613629278
+    "timestamp": 1613643527
   }
 }
