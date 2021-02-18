@@ -5,6 +5,22 @@ RSpec.describe 'Routes test', type: :routing do
     it 'routes to menu_actions#index' do
       expect(get: '/').to route_to('menu_actions#index')
     end
+    
+    it 'routes to devise/sessions#new' do
+      expect(get: '/users/sign_in').to route_to('devise/sessions#new')
+    end
+
+    it 'routes to devise/sessions#create' do
+      expect(post: '/users/sign_in').to route_to('devise/sessions#create')
+    end
+
+    it 'routes to devise/sessions#create' do
+      expect(get: '/users/sign_up').to route_to('devise/registrations#new')
+    end
+
+    it 'routes to devise/sessions#create' do
+      expect(post: '/users').to route_to('devise/registrations#create')
+    end
 
     it 'routes to #start' do
       expect(get: '/input-start').to route_to('menu_actions#start')
