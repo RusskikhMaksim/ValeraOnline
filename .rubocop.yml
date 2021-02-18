@@ -4,6 +4,14 @@ require:
 
 AllCops:
   NewCops: enable
+  Exclude:
+    - 'config/environments/*'
+    - 'config/initializers/devise.rb'
+    - 'spec/**/*_spec.rb'
+    - 'bin/bundle'
+    - 'db/schema.rb'
+    - 'node_modules/node-sass/src/libsass/extconf.rb'
+    - 'node_modules/node-sass/src/libsass/contrib/libsass.spec'
 
 Style/Documentation:
   Enabled: false
@@ -16,4 +24,4 @@ Metrics/MethodLength:
 
 Metrics/BlockLength:
   Exclude:
-    - 'spec/**/*_spec.rb'
+    

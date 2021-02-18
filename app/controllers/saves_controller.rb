@@ -10,7 +10,7 @@ class SavesController < ApplicationController
 
     redirect_to '/valera-online'
   end
-  
+
   def set_stats
     @save.health = 100
     @save.mana = 0
