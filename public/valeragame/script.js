@@ -10,9 +10,15 @@ function getRandomInt(max) {
     return Math.floor(Math.random() * Math.floor(max));
 }
 
+var info_table;
+var info_stat_table;
+var log;
+
 window.onload = function(){
-    //main();
-    console.log("hello")
+    info_table = document.getElementById('info_table');
+    info_stat_table = document.getElementById('info_stat_table');
+    log = document.getElementById('log_table');
+    main();
 }
 
 class Info{
@@ -46,7 +52,7 @@ class Info{
       PrintToInfoStat(`<i>
                         <br>HP: -5
                         <br>MP: +30
-                        <br>Жизнерадостность: -1
+                        <br>Жизнерадостность: +1
                         <br>Усталость: +10
                         <br> КЭШ: -20$
                       </i>`);
@@ -75,13 +81,14 @@ class Info{
     sing_in_metro(){
       PrintToInfo(`<b><br>Ну это уже крайние меры, дальше только просить милостыню возле храма</b>`)
       PrintToInfoStat(`<i>
+                        <br>HP: -5
                         <br>MP: +10
                         <br>Жизнерадостность: +1
                         <br>Усталость: +20
                         <br>КЭШ: +10$
                       </i>
                       <b>
-                        <br><br>А если вы достаточно под "шафе" <br></b><i>(MP = 50 или 60)</i><b>, можете получить еще немного кэша</b>
+                        <br><br>А если вы достаточно под "шафе" <br></b><i>(MP от 40 до 70)</i><b>, можете получить еще немного кэша</b>
                       <i>
                         <br><br>КЭШ: +50
                       </i>`);             
@@ -106,7 +113,7 @@ class Info{
     }
     sleep(){
         PrintToInfo(`<b>Отобрать у бомжа картонку
-        <br>Если вы не пили</b><i> (MP < 30) </i><b>, то у вас есть все шансы выстоять против бомжа, но если вы пьяны</b><i> (MP > 70) </i><b>, то бомж не даст вам выспаться</b>`)
+        <br>Если вы не пили</b><i> (MP до 30) </i><b>, то у вас есть все шансы выстоять против бомжа, но если вы пьяны</b><i> (MP от 70) </i><b>, то бомж не даст вам выспаться</b>`)
         PrintToInfoStat(`<b>
                           <br>Если трезвый:
                         </b>
@@ -162,7 +169,7 @@ class Actions {
         else{
             valerka.hp -= 5;
             valerka.mp += 30;
-            valerka.fun -= 1;
+            valerka.fun += 1;
             valerka.fatigue += 10;
             valerka.money -= 20;
             PrintToLog("<b>Сериал был хорош</b><i><br>HP: -5<br>MP: +30<br>Жизнерадостность: -1<br>Усталость: +10<br> КЭШ: -20$</i>")
@@ -199,11 +206,12 @@ class Actions {
     }
     sing_in_metro(valerka){
         PrintToLog("<b>Вы спели в метро</b><i><br>HP: -5<br>MP: +10<br>Жизнерадостность: +1<br>Усталость: +20<br> КЭШ: +10$</i>")
+        valerka.hp -= 5;
         valerka.mp += 10;
         valerka.fun += 1;
         valerka.fatigue += 20;
         valerka.money += 10;
-        if (valerka.mp > 40 && valerka.mp < 70){
+        if (valerka.mp >= 40 && valerka.mp <= 70){
             valerka.money += 50;
             PrintToLog("<b>Вы отлично выступили в метро и вам подкинули $</b><i><br>КЭШ: +50$</i>")
         }
@@ -234,7 +242,7 @@ class Actions {
           valerka.hp += 90
           PrintToLog("<b>Чуствуете прилив сил</b><i><br>HP: 90<br>MP: -50<br>Усталость: -70</i>")
         }
-        if (valerka.mp > 70){
+        if (valerka.mp >= 70){
           valerka.fun -= 3
           PrintToLog("<b>Как живой, но не живой</b><i><br>MP: -50<br>Жизнерадостность: -3<br>Усталость: -70</i>")
         }
@@ -248,20 +256,16 @@ class Actions {
 
 
 function PrintToInfo(text){
-    var info = document.getElementById('info_table');
-    info.innerHTML = `${text}`
+    info_table.innerHTML = `${text}`
 }
 function PrintToInfoStat(text){
-    var info = document.getElementById('info_stat_table');
-    info.innerHTML = `${text}`
+    info_stat_table.innerHTML = `${text}`
 }
-function PrintToLog(text){
-    var log = document.getElementById('log_table');
+function PrintToLog(text){  
     log.innerHTML += `<tr><td>${text}</td></tr>`
 }
 
 function main(){
-    console.log("DAROVA");
     var doomguy = document.getElementById('doomguy');
     var body = document.getElementById('body');
     var head = document.getElementById('head');
@@ -389,76 +393,69 @@ function main(){
         stat_fatigue.innerHTML = stat.fatigue;
         stat_money.innerHTML = stat.money + "$";
     }
-let TiWiner = 0;
-    function CheekStat(){
-        if (stat.hp > 100) {
+    let TiWiner = 0;
+    function CheckStat(){
+        if (stat.hp > 100)
             stat.hp = 100
-        }
-        if (stat.mp < 0) {
+        if (stat.mp < 0)
             stat.mp = 0
-        }
-        if (stat.mp > 100) {
+        if (stat.mp > 100)
             stat.mp = 100;
-        }
-        if (stat.fun < -10) {
+        if (stat.fun < -10){
             PrintToLog("<b>Выглядишь как унылое Г<br></b><i>HP: -10</i>")
             stat.hp = stat.hp - 10;
         }
-        if (stat.fun > 10) {
+        if (stat.fun > 10)
             stat.fun = 10;
-        }
-        if (stat.fatigue < 0) {
+        if (stat.fatigue < 0)
             stat.fatigue = 0
-        }
         if (stat.fatigue > 100){
             PrintToLog("<b>Вы слишком устали, вам пора поспать<br></b><i>HP: -" + (stat.fatigue - 100) +"</i>")
             stat.hp = stat.hp - (stat.fatigue - 100);
-            stat.fatigue = 100;
+            //stat.fatigue = 100;
         }
         
-        if (dotka_played >= 100 && TiWiner == 0){
-            PrintToLog("<b>Вы победили на THE INTERNATIONAL<br>ВКЛЮЧЕН РЕЖИМ БОГА</b><i><br>КЭШ: 99999(НАВСЕГДА)</i>")
-            stat.money = 99999;
+        if (dotka_played >= 100){         
             stat.hp = 100;
             stat.mp = 100;
             stat.fun = 10;
+            stat.money = 99999;
+            if (TiWiner == 0)
+                PrintToLog("<b>Вы победили на THE INTERNATIONAL<br>ВКЛЮЧЕН РЕЖИМ БОГА</b><i><br>КЭШ: 99999(НАВСЕГДА)</i>")
             TiWiner = 1
         }
-        if (dotka_played >= 100 && TiWiner == 1){
-            stat.money = 99999;
-            stat.hp = 100;
-            stat.mp = 100;
-            stat.fun = 10;
-        }
+        
+        
+        
         if (stat.hp <= 0){
-            body.innerHTML = '<a href="/"><div class="button reload">Выйти в главное меню</div></a>';
+            body.innerHTML = '<a href="/"><div class="button reload">Начать заново</div></a>';
             body.style.backgroundImage = "url(valeragame/img/DIED.jpg)";
             //body.style.backgroundPosition = "center center";
             body.style.backgroundSize = "100%";
-            console.log("U DIED");
+            //console.log("U DIED");
         }
     }
 
     function Doomguy(){
         if (stat.hp == 100)
-            doomguy.innerHTML = '<img src="valeragame/img/normal.png"></img>';
+            doomguy.innerHTML = '<img src="valeragame/img/normal.png">';
         if (stat.hp <= 90 && stat.hp > 70)
-            doomguy.innerHTML = '<img src="valeragame/img/Damaged1.png"></img>';
+            doomguy.innerHTML = '<img src="valeragame/img/Damaged1.png">';
         if (stat.hp <= 70 && stat.hp > 50)
-            doomguy.innerHTML = '<img src="valeragame/img/Damaged2.png"></img>';
+            doomguy.innerHTML = '<img src="valeragame/img/Damaged2.png">';
         if (stat.hp <= 50 && stat.hp > 30)
-            doomguy.innerHTML = '<img src="valeragame/img/Damaged3.png"></img>';
+            doomguy.innerHTML = '<img src="valeragame/img/Damaged3.png">';
         if (stat.hp <= 30 && stat.hp > 10)
-            doomguy.innerHTML = '<img src="valeragame/img/Damaged4.png"></img>';
+            doomguy.innerHTML = '<img src="valeragame/img/Damaged4.png">';
         if (stat.hp <= 10 && stat.hp >= 5)
-            doomguy.innerHTML = '<img src="valeragame/img/Damaged5.png"></img>';
-        if (stat.mp >= 100)
-            doomguy.innerHTML = '<img src="valeragame/img/Alcohol.png"></img>';
+            doomguy.innerHTML = '<img src="valeragame/img/Damaged5.png">';
+        if (stat.mp >= 70)
+            doomguy.innerHTML = '<img src="valeragame/img/Alcohol.png">';
     }
 
     function Engine(){
         
-        CheekStat();
+        CheckStat();
         UpdateStat();
         Doomguy();
         SaveData();
