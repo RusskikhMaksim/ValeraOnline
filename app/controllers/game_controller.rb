@@ -1,5 +1,6 @@
 require 'json'
 class GameController < ApplicationController
+    skip_before_action :verify_authenticity_token
     def index
         @stats = Save.find(session[:current_save_id])
     end
