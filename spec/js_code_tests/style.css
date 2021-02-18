@@ -1,0 +1,154 @@
+div         {
+    border:2px solid black;
+    box-sizing: border-box;
+    width: 250px;
+    height: 40px;
+}
+
+body        {
+    margin: 0;
+    
+}
+#name       {
+    margin: 25px;
+    margin-top: 50px;
+    margin-left: 50px;
+    border:2px solid black;
+
+    width: 100px;
+    font-size: 18px;
+    height: 24px;
+    text-align: center;
+
+}
+#doomguy    {
+    margin: 25px;
+    margin-top: -25px;
+    margin-left: 52px;
+    border:0px solid black;
+    width: 100px;
+    height: 120px;
+}
+
+
+#log        {
+    margin-left: 325px;
+    margin-top: -320px;
+    width: 700px;
+    height: 500px;
+    overflow-y: scroll;
+}
+
+
+#stats      {
+    width: 250px;
+    margin-left: 50px;
+    height: 100%;
+}
+
+table       {
+    width: 100%;
+}
+
+th          {   
+
+    border-bottom:1px solid black;
+    text-align: center;
+    font-size: 24px;
+}
+
+td          {   
+    border-bottom:1px solid black;
+    min-width: 60px;
+}
+
+/*
+    margin-left: -124px;
+    margin-top: 170px;
+
+    padding: 2px 1em calc(.8em + 3px);
+*/
+
+.button   {
+    font-weight: 700;
+    color: white;
+    padding-top: 8px;
+    text-decoration: none;
+    text-align: center;
+    border-radius: 3px;
+    background: rgb(78, 64, 199);
+    box-shadow: 0 -3px rgb(73, 64, 199) inset;
+    transition: 0.2s;
+} 
+.button:hover { 
+    background: rgb(73, 64, 199); 
+}
+.button:active {
+    background: rgb(33, 82, 147);
+    box-shadow: 0 3px rgb(33, 82, 147) inset;
+}
+
+.sub        {   
+    margin-left: 1075px;
+    width: 100px;
+}
+
+#menu       {
+    margin-top: -500px;
+}
+
+#save       {
+    margin-top: 25px;
+}
+
+#info       {
+    width: 350px;
+    height: 446px;
+    margin-top: -500px;
+    margin-left: 1075px;
+    margin-bottom: 80px;
+}
+
+.action     {   
+    margin-top: 25px;
+    margin-left: 100px;
+    float: left;
+}
+
+#Actions    {   
+    margin-top: 25px;
+    border:0px solid black;
+    width: 1425px;
+}
+
+#Actions div{
+    cursor: pointer
+}
+
+.sub{
+    cursor: pointer
+}
+
+#died_img   {
+    width: 100vw;
+    height: 99vh;
+}
+
+#info_table {
+    text-align: center;
+    border-bottom:0px solid black;
+    font-size: 18px;
+}
+
+#info_stat_table {
+    font-size: 18px;
+    text-align: center;
+    border-bottom:0px solid black;
+}
+
+.reload {
+    //margin: 50px, 0, 0, 0;
+    margin-top: 75px;
+    margin-left: auto;
+    margin-right: auto;
+}

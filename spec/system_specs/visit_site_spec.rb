@@ -1,7 +1,7 @@
 require 'rails_helper'
 
 
-RSpec.describe 'Hello', :type => :system do
+RSpec.describe 'ui tests', :type => :system do
 	let(:saves_controller) { instance_double(SavesController) }
     context 'test home page' do
 		it do
